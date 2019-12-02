@@ -18,6 +18,5 @@ RUN apt-get install -y \
 COPY presence.sh .
 RUN chmod +x presence.sh
 
-# Set entrypoint and run
-ENTRYPOINT ["/bin/bash"]
+# Run
 CMD ["/presence/presence.sh", "-p", "/config"]
