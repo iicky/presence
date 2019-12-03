@@ -24,4 +24,5 @@ COPY presence.sh .
 RUN chmod +x presence.sh
 
 # Run
+ENTRYPOINT ["/bin/bash"]
 CMD ["/presence/presence.sh", "-p", "/config"]
