@@ -1,16 +1,21 @@
-FROM amd64/ubuntu
+FROM debian:stable-slim
 
 # Create directory
 RUN mkdir -p /presence
 WORKDIR /presence
 
 # Install and update packages
-RUN apt-get update && apt-get install -y bluez git
-
-# Install Mosquitto and friends
-RUN apt-get install -y \
-  libwebsockets-dev \
+RUN apt-get update && apt-get install -y \
+  bash \
+  bc \
+  bluetooth \
+  bluez \
+  bluez-hcidump \
+  ca-certificates \
+  curl \
+  git \
   libmosquitto-dev \
+  libwebsockets-dev \
   mosquitto \
   mosquitto-clients
 
